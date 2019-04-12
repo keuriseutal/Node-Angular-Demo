@@ -1,0 +1,21 @@
+<div>
+  <br>
+  <button type="button" class="btn btn-default" routerLink="/create">Add New Issue</button>
+    <br><br>
+    <br>
+    <table class="table">
+      <tr>
+        <th *ngFor="let header of displayedColumns">{{header}}</th>
+      </tr>
+      <tr *ngFor="let issue of issues">
+        <td>{{issue.title}}</td>
+        <td>{{issue.responsible}}</td>
+        <td>{{issue.severity}}</td>
+        <td>{{issue.status}}</td>
+        <td>
+          <button type="button" class="btn btn-default" (click)="editIssue(issue._id)">Edit</button>
+          <button type="button" class="btn btn-default" (click)="deleteIssue(issue._id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+</div>
